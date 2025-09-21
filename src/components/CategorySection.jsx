@@ -6,22 +6,22 @@ export default function CategorySection() {
   const categories = [
     {
       name: 'All Products',
-      image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/product4.png',
       link: '/products?category=All+Products',
     },
     {
       name: 'Bracelets',
-      image: 'https://images.unsplash.com/photo-1608043152291-373c027021a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/product7.png',
       link: '/products?category=Bracelet',
     },
     {
       name: 'Chains',
-      image: 'https://images.unsplash.com/photo-1606760227091-3dd44d7f7e77?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/product9.png',
       link: '/products?category=Chain',
     },
     {
       name: 'Earrings',
-      image: 'https://images.unsplash.com/photo-1611651557475-3b35532bed90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/product15.png',
       link: '/products?category=Earring',
     },
     {
