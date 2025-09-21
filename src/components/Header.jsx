@@ -17,7 +17,8 @@ export default function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
-              <span className="text-2xl font-bold text-gray-800">Jewelry</span>
+              {/* <span className="text-2xl font-bold text-gray-800">Jewelry</span> */}
+              <img src="/images/logo.png" alt="AVJewellery Logo" className="h-16 w-auto" />
             </Link>
           </div>
 
