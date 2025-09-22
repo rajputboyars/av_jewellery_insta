@@ -14,7 +14,7 @@ export default function AllProducts() {
   const products = [
     {
       id: "1",
-      name: "Butterfly Korean Earring",
+      name: "Korean style Golden wings Earrings and Studs",
       category: "Earring",
       price: 250,
       discount: 149,
@@ -24,7 +24,7 @@ export default function AllProducts() {
     },
     {
       id: "2",
-      name: "Silver Chain Necklace",
+      name: "Anti tarnish jalebi stud earrings",
       category: "Earring",
       price: 250,
       discount: 149,
@@ -34,7 +34,7 @@ export default function AllProducts() {
     },
     {
       id: "3",
-      name: "Pearl Drop Earrings",
+      name: "Korean Golden Studded Chain Tassels Ear Cuff",
       category: "Earring",
       price: 250,
       discount: 199,
@@ -44,7 +44,7 @@ export default function AllProducts() {
     },
     {
       id: "4",
-      name: "Velvet Hair Scrunchie",
+      name: "Gold Teardrop Earrings",
       category: "Earring",
       price: 300,
       discount: 215,
@@ -54,7 +54,7 @@ export default function AllProducts() {
     },
     {
       id: "5",
-      name: "Personalized Gift Hamper",
+      name: "Gold Clover Black Coated Bracelet",
       category: "Bracelet",
       price: 250,
       discount: 185,
@@ -240,27 +240,31 @@ export default function AllProducts() {
               filteredProducts.map((product) => (
                 <div
                   key={product.id} // Use unique id instead of name
-                  className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden"
+                  className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden max-w-[350px]"
                 >
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-48 sm:h-56 object-cover"
+                    className="w-full h-[400px] object-cover rounded-lg shadow-md"
                   />
-                  <div className="p-4 text-center">
+                  <div className="p-4 text-left">
                     <h2 className="text-lg font-semibold text-gray-800">
                       {product.name}
                     </h2>
-                    <p className="text-sm text-gray-600">{product.category}</p>
-                    <p className="text-base  text-gray-800 mt-2">
-                      Rs- {product.discount}{" "}
-                      <span className="text-sm text-gray-400 line-through">
-                        {product.price.toFixed(2)}
-                      </span>
-                    </p>
+                    <div className="w-full flex justify-between items-center ">
+                      <p className="text-base text-gray-600">
+                        {product.category}
+                      </p>
+                      <p className="text-base  text-gray-800 mt-2">
+                        Rs- {product.discount}{" "}
+                        <span className="text-sm text-gray-400 line-through">
+                          {product.price.toFixed(2)}
+                        </span>
+                      </p>
+                    </div>
                     <button
                       onClick={() => handleViewDetails(product)}
-                      className="inline-block mt-4 bg-amber-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-amber-700 transition-colors"
+                      className="inline-block w-full mt-4 bg-amber-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-amber-700 transition-colors"
                     >
                       View Details
                     </button>
