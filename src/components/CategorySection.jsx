@@ -26,12 +26,12 @@ export default function CategorySection() {
     },
     {
       name: 'Hair Accessories Combo',
-      image: 'https://images.unsplash.com/photo-1607013407627-6ee814329547?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/hairbowclip.jpg',
       link: '/products?category=Hair+Accessory',
     },
     {
       name: 'Personalized Gift Hamper',
-      image: 'https://images.unsplash.com/photo-1607013407627-6ee814329547?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/giftHamper.jpg',
       link: '/products?category=Gift+Hamper',
     },
   ];
@@ -47,7 +47,7 @@ export default function CategorySection() {
                 <img
                   src={category.image}
                   alt={category.name}
-                  className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-48 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="bg-white p-4 text-center">
                   <h3 className="text-lg font-semibold text-gray-800 group-hover:text-amber-600 transition-colors">
