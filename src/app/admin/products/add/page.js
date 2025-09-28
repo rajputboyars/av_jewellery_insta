@@ -38,7 +38,7 @@ export default async function AddProduct() {
         uploadedUrls.push(res.data.secure_url);
       }
 
-      await serverFetch('http://localhost:3000/api/products', {
+      await serverFetch(`${process.env.FRONTEND_URL || 'http://localhost:3000'}/api/products`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ name, category, price, discount, images: uploadedUrls, description }),

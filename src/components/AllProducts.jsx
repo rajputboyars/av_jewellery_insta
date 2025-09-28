@@ -4,155 +4,12 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import ProductModal from "@/components/ProductModal";
 
-export default function AllProducts() {
+export default function AllProducts({products}) {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get("category") || "All Products";
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [priceRange, setPriceRange] = useState("All");
   const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const products = [
-    {
-      id: "1",
-      name: "Korean style Golden wings Earrings and Studs",
-      category: "Earring",
-      price: 250,
-      discount: 149,
-      image: "/images/product1.png",
-      description:
-        "A stunning anti-tarnish bracelet with sparkling diamond accents, perfect for any occasion.",
-    },
-    {
-      id: "2",
-      name: "Anti tarnish jalebi stud earrings",
-      category: "Earring",
-      price: 250,
-      discount: 149,
-      image: "/images/product2.png",
-      description:
-        "Elegant silver chain necklace, designed to stay tarnish-free and complement any outfit.",
-    },
-    {
-      id: "3",
-      name: "Korean Golden Studded Chain Tassels Ear Cuff",
-      category: "Earring",
-      price: 250,
-      discount: 199,
-      image: "/images/product3.png",
-      description:
-        "Classic pearl drop earrings with anti-tarnish technology, adding sophistication to your look.",
-    },
-    {
-      id: "4",
-      name: "Gold Teardrop Earrings",
-      category: "Earring",
-      price: 300,
-      discount: 215,
-      image: "/images/product4.png",
-      description:
-        "Trendy velvet scrunchie, perfect for elevating your hairstyle with a touch of elegance.",
-    },
-    {
-      id: "5",
-      name: "Gold Clover Black Coated Bracelet",
-      category: "Bracelet",
-      price: 250,
-      discount: 185,
-      image: "/images/product5.png",
-      description:
-        "A customizable gift hamper filled with AVJewellery’s finest pieces, ideal for special occasions.",
-    },
-    {
-      id: "6",
-      name: "Gold Hoop Earrings Small",
-      category: "Bracelet",
-      price: 350,
-      discount: 275,
-      image: "/images/product6.png",
-      description:
-        "Sleek gold hoop earrings with anti-tarnish finish, versatile for daily wear or events.",
-    },
-    {
-      id: "7",
-      name: "Gold Hoop Earrings Medium",
-      category: "Bracelet",
-      price: 350,
-      discount: 299,
-      image: "/images/product7.png",
-      description:
-        "Sleek gold hoop earrings with anti-tarnish finish, versatile for daily wear or events.",
-    },
-    {
-      id: "8",
-      name: "Gold Hoop Earrings Large",
-      category: "Chain",
-      price: 350,
-      discount: 230,
-      image: "/images/product8.png",
-      description:
-        "Sleek gold hoop earrings with anti-tarnish finish, versatile for daily wear or events.",
-    },
-    {
-      id: "9",
-      name: "Gold Hoop Earrings Classic",
-      category: "Chain",
-      price: 350,
-      discount: 230,
-      image: "/images/product9.png",
-      description:
-        "Sleek gold hoop earrings with anti-tarnish finish, versatile for daily wear or events.",
-    },
-    {
-      id: "10",
-      name: "Gold Hoop Earrings Modern",
-      category: "Chain",
-      price: 350,
-      discount: 230,
-      image: "/images/product10.png",
-      description:
-        "Sleek gold hoop earrings with anti-tarnish finish, versatile for daily wear or events.",
-    },
-    {
-      id: "11",
-      name: "Gold Hoop Earrings Elegant",
-      category: "Chain",
-      price: 450,
-      discount: 355,
-      image: "/images/product11.png",
-      description:
-        "Sleek gold hoop earrings with anti-tarnish finish, versatile for daily wear or events.",
-    },
-    {
-      id: "12",
-      name: "Gold Hoop Earrings Bold",
-      category: "Chain",
-      price: 199,
-      discount: 149,
-      image: "/images/product12.png",
-      description:
-        "Sleek gold hoop earrings with anti-tarnish finish, versatile for daily wear or events.",
-    },
-    {
-      id: "13",
-      name: "Gold Hoop Earrings Minimal",
-      category: "Chain",
-      price: 350,
-      discount: 299,
-      image: "/images/product13.png",
-      description:
-        "Sleek gold hoop earrings with anti-tarnish finish, versatile for daily wear or events.",
-    },
-    {
-      id: "14",
-      name: "Gold Hoop Earrings Statement",
-      category: "Bracelet",
-      price: 250,
-      discount: 149,
-      image: "/images/product14.png",
-      description:
-        "Sleek gold hoop earrings with anti-tarnish finish, versatile for daily wear or events.",
-    },
-  ];
 
   const categories = [
     "All Products",
@@ -239,11 +96,11 @@ export default function AllProducts() {
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
                 <div
-                  key={product.id} // Use unique id instead of name
+                  key={product._id} // Use unique id instead of name
                   className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden max-w-[350px]"
                 >
                   <img
-                    src={product.image}
+                    src={product.images[0]}
                     alt={product.name}
                     className="w-full h-[400px] object-cover rounded-lg shadow-md"
                   />
