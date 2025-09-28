@@ -12,13 +12,27 @@ export default function ProductModal({ product, onClose }) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-6 max-w-lg w-[350px] mx-4 sm:mx-6">
+      <div className="bg-white rounded-lg p-6 max-w-lg w-[400px] mx-4 sm:mx-6">
         <div className="flex flex-col items-left">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-[400px] object-cover rounded-md mb-4"
-          />
+          <div className="flex gap-4">
+            <img
+              src={product.images[0]}
+              alt={product.name}
+              className="w-[350px] h-[400px] object-cover rounded-md mb-4"
+            />
+            <div className="w-[50px]">
+              {product.images.map((image, index) => {
+                return (
+                  <img
+                    key={product._id}
+                    src={image}
+                    alt={product.name}
+                    className="w-full h-full object-cover rounded-md mb-4"
+                  />
+                );
+              })}
+            </div>
+          </div>
           <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">
             {product.name}
           </h2>
