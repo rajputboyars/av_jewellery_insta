@@ -11,7 +11,7 @@ export default async function EditProduct({ params }) {
   const cookiesData = cookieStore.get('token');
   const token = cookiesData?.value || null;
 
-  const res = await serverFetch(`${process.env.FRONTEND_URL || 'http://localhost:3000'}/api/products/${id}`, {
+  const res = await serverFetch(`${process.env.FRONTEND_URL}/api/products/${id}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   const product = res.ok ? await res.json() : null;
@@ -23,7 +23,7 @@ export default async function EditProduct({ params }) {
   async function handleSubmit(payload) {
     'use server';
     try {
-      await serverFetch(`${process.env.FRONTEND_URL || 'http://localhost:3000'}/api/products/${id}`, {
+      await serverFetch(`${process.env.FRONTEND_URL}/api/products/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify(payload),
