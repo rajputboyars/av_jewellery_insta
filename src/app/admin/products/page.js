@@ -16,7 +16,7 @@ export default async function AdminProducts() {
   const products = res.ok ? await res.json() : [];
 
   return (
-    <div className="container mx-auto p-8 pb-40">
+    <div className="container mx-auto p-8 pt-40">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl text-amber-500 font-bold">Products</h1>
         <Link href="/admin/products/add">

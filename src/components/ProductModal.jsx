@@ -14,20 +14,20 @@ export default function ProductModal({ product, onClose }) {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg p-6 max-w-lg w-[400px] mx-4 sm:mx-6">
         <div className="flex flex-col items-left">
-          <div className="flex gap-4">
+          <div className="flex flex-col gap-4">
             <img
               src={product.images[0]}
               alt={product.name}
               className="w-[350px] h-[400px] object-cover rounded-md mb-4"
             />
-            <div className="w-[50px]">
+            <div className="md:w-full flex justify-between">
               {product.images.map((image, index) => {
                 return (
                   <img
                     key={product._id}
                     src={image}
                     alt={product.name}
-                    className="w-full h-full object-cover rounded-md mb-4"
+                    className="w-[50px] object-cover rounded-md mb-4"
                   />
                 );
               })}
