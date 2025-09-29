@@ -4,8 +4,8 @@ import { NextResponse } from 'next/server';
 import { authMiddleware } from '@/middleware/auth';
 
 export async function GET(req) {
-  const authResponse = await authMiddleware(req);
-  if (authResponse) return authResponse;
+  // const authResponse = await authMiddleware(req);
+  // if (authResponse) return authResponse;
 
   await connectToDB();
 
