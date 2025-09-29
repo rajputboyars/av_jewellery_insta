@@ -54,7 +54,7 @@ export default function AllProducts({products}) {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen max-md:pt-10">
       <main className="flex-grow bg-gray-50 py-12 pt-16 md:pt-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-800 text-center mb-6 md:mb-20">
@@ -92,12 +92,12 @@ export default function AllProducts({products}) {
               </select>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-md:px-8 max-sm:place-items-center">
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
                 <div
                   key={product._id} // Use unique id instead of name
-                  className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden max-w-[350px]"
+                  className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden max-sm:w-[350px] sm:max-w-[350px]"
                 >
                   <img
                     src={product.images[0]}
