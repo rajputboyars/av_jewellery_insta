@@ -7,7 +7,7 @@ import ProductGrid from '@/components/ProductGrid';
 export default async function AdminProducts() {
   await protectAdminRoute(); // ✅ Server-side protection
 
-  const cookieStore = cookies();
+  const cookieStore =await cookies();
   const token = cookieStore.get('token')?.value;
 
   const res = await serverFetch(`${process.env.FRONTEND_URL}/api/products`, {

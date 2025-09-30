@@ -6,7 +6,7 @@ import { serverFetch } from '@/lib/serverFetch';
 
 export default async function ProductsPage() {
 
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const token = cookieStore.get('token')?.value;
 
   const res = await serverFetch(`${process.env.FRONTEND_URL}/api/products`, {
