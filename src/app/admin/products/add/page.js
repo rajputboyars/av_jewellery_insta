@@ -9,8 +9,8 @@ import Link from 'next/link';
 export default async function AddProduct() {
   await protectAdminRoute(); // Server-side protection
 
-  const cookieStore = await cookies().get('token');
-  const token = await cookieStore?.value;
+  const cookieStore = await cookies()
+  const token = cookieStore?.get('token')?.value;
 
   async function handleSubmit(formData) {
     'use server';

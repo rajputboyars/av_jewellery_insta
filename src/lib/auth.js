@@ -5,7 +5,7 @@ import { connectToDB } from '@/lib/db';
 import User from '@/models/User';
 
 export async function protectAdminRoute() {
-  const cookieStore = cookies();
+  const cookieStore =await cookies();
   const token = cookieStore.get('token')?.value;
 
   if (!token) {

@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import ProductModal from "@/components/ProductModal";
+import Link from "next/link";
 
-export default function AllProducts({products}) {
+export default function AllProducts({ products }) {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get("category") || "All Products";
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
@@ -40,8 +41,8 @@ export default function AllProducts({products}) {
       (range) => range.label === priceRange
     );
     const matchesPrice =
-      product.price >= selectedPriceRange.min &&
-      product.price < selectedPriceRange.max;
+      product.discount >= selectedPriceRange.min &&
+      product.discount < selectedPriceRange.max;
     return matchesCategory && matchesPrice;
   });
 
@@ -119,12 +120,14 @@ export default function AllProducts({products}) {
                         </span>
                       </p>
                     </div>
-                    <button
-                      onClick={() => handleViewDetails(product)}
-                      className="inline-block w-full mt-4 bg-amber-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-amber-700 transition-colors"
-                    >
-                      View Details
-                    </button>
+                    <Link href={`/products/${product._id}`}>
+                      <button
+                        // onClick={() => handleViewDetails(product)}
+                        className="inline-block w-full mt-4 bg-amber-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-amber-700 transition-colors cursor-pointer"
+                      >
+                        View Details
+                      </button>
+                    </Link>
                   </div>
                 </div>
               ))

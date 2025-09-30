@@ -24,7 +24,7 @@ export default function ProductModal({ product, onClose }) {
               {product.images.map((image, index) => {
                 return (
                   <img
-                    key={product._id}
+                    key={index}
                     src={image}
                     alt={product.name}
                     className="w-[50px] object-cover rounded-md mb-4"
